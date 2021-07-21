@@ -1,4 +1,4 @@
-#  Binary Search Tree 🌴
+# Binary Search Tree 🌴
 
 We are going to be implementing a Binary Tree together! 🎉
 
@@ -15,6 +15,10 @@ https://gawdiseattle.gitbook.io/wdi/08-cs/cs-trees-data-structures
 imbalanced binary tree:
 
 https://appliedgo.net/balancedtree/
+
+miro board:
+
+https://miro.com/app/board/o9J_lWxUo_o=/
 
 visualgo:
 
