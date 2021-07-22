@@ -151,7 +151,7 @@ class BinaryTree:
     return max_height
 
   # Return the maximum data value stored in the tree
-  def getMax(self):
+  def get_max(self):
     '''
       getMax() -> int:\n 
       perform depth first search
@@ -167,7 +167,7 @@ class BinaryTree:
 
     return current_node.data
 
-  def getMin(self):
+  def get_min(self):
     '''
       getMin() -> int:\n 
       perform depth first search
