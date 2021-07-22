@@ -84,7 +84,7 @@ class BinaryTree:
   def print(self, node=None):
     '''
       print(node=optional: Node) -> None:\n
-      prints out all values
+      prints out all values recursively (in a breadth first search fashion)
       defualt start is at root node
     '''
 
