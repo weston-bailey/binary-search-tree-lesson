@@ -51,15 +51,6 @@ class BinaryTree:
     '''
     pass
 
-  def height(self, node=None):
-    '''
-      height(node=optional: Node) -> int:\n 
-      perform breadth first search
-      Calculate the maximum amount of nodes in any one path from the given node
-      If not given a specific node, default to using the root node
-    '''
-    pass
-
   def getMax(self):
     '''
       getMax() -> int:\n 
