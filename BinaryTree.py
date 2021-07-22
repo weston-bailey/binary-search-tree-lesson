@@ -28,7 +28,7 @@ class BinaryTree:
   def print(self, node=None):
     '''
       print(node=optional: Node) -> None:\n
-      prints out all values recursively
+      prints out all values recursively (in a breadth first search fashion)
       defualt start is at root node
     '''
     pass
@@ -51,6 +51,15 @@ class BinaryTree:
     '''
     pass
 
+  def height(self, node=None):
+    '''
+      height(node=optional: Node) -> int:\n 
+      perform breadth first search
+      Calculate the maximum amount of nodes in any one path from the given node
+      If not given a specific node, default to using the root node
+    '''
+    pass
+
   def getMax(self):
     '''
       getMax() -> int:\n 
@@ -58,6 +67,7 @@ class BinaryTree:
       Calculate the maximum value held in the tree
     '''
     pass
+
   def getMin(self):
     '''
       getMin() -> int:\n 
