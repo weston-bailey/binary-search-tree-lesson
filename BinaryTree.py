@@ -53,6 +53,9 @@ class BinaryTree:
           return
         # ...otherwise move to the right 
         else: current_node = current_node.right
+      # return if duplicate
+      else:
+        return
 
   def search(self, val):
     '''
