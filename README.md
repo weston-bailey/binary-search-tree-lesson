@@ -10,7 +10,10 @@ To get started head over to BinaryTree.py and check out the classes there. There
 
 ...and a good order to study them in.
 
-
+1. Linked lists -- introduction to node based datas tructures
+2. Binary Search Trees -- more complex algorithm for sorting in node based data structure
+3. Tries -- tree-like datastructure where one node can be related to an arbitrary amount of nodes
+4. Graphs -- any node can be linked to any other node in this data strucutre
 
 ## Links
 
