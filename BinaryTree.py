@@ -112,7 +112,26 @@ class BinaryTree:
       Calculate the number of nodes in the tree, starting from the given node
       If no node is provided, we can use the root as a sensible default
     '''
-    pass
+    # if no node is provided, start at root
+    if not node:
+      node = self.root
+
+    # keep track of a count of nodes
+    count = 0
+    # recursively loop the tree, coutning nodes
+    def recurse_size(node):
+      nonlocal count
+      if node:
+        print(node.data)
+        # inc the count is the node exists
+        count += 1
+        # if node exists invoke sef on left and right
+        recurse_size(node.left)
+        recurse_size(node.right)
+    
+    recurse_size(node)
+    # return the count
+    return count   
 
   def height(self, node=None):
     '''
@@ -121,7 +140,26 @@ class BinaryTree:
       Calculate the maximum amount of nodes in any one path from the given node
       If not given a specific node, default to using the root node
     '''
-    pass
+    # default to the root node
+    if not node:
+      node = self.root
+    
+    # keep track of the max height encountered
+    max_height = 0
+    # recursive function that keeps track of the height
+    def recurse_height(node, height=1):
+      # and compares it to the max height
+      nonlocal max_height
+      # this is also base case
+      if node:
+        if height > max_height:
+          max_height = height
+        # inovkes itself on the left and right nodes
+        recurse_height(node.left, height + 1)
+        recurse_height(node.right, height + 1)
+    
+    recurse_height(node)
+    return max_height
 
   def get_max(self):
     '''
@@ -129,7 +167,17 @@ class BinaryTree:
       perform depth first search
       Calculate the maximum value held in the tree
     '''
-    pass
+     # if there is not root, then return None
+    if not self.root:
+      return None
+    # set the root to be the current node for the loop
+    current_node = self.root
+    # loop while there is a right
+    while current_node.right:
+      current_node = current_node.right
+
+    # return the last node
+    return current_node
 
   def get_min(self):
     '''
