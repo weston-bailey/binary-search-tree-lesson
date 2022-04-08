@@ -2,7 +2,7 @@
 
 We are going to be implementing a Binary Tree together! 🎉
 
-Since Trees are a data structure that relies on nodes, I like to think of a Binary Tree as a pre-sorted type linked list. There is a little alorithmic logic to how a BST stores the data.
+Since Trees are a data structure that relies on nodes, I like to think of a Binary Tree as a pre-sorted type of linked list. There is a little alorithmic logic to how a BST stores the data.
 
 To get started head over to BinaryTree.py and check out the classes there. There are method stubs that we are going to fill out together!
 
