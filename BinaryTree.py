@@ -15,9 +15,9 @@ class BinaryTree:
 
     def insert(self, data):
         '''
-			Insert(data: any) -> None:\n 
-			creates a new Node from the data passed in and adds it to the tree
-			If the data is already in the tree, does not insert it again
+        Insert(data: any) -> None:\n 
+        creates a new Node from the data passed in and adds it to the tree
+        If the data is already in the tree, does not insert it again
         '''
         pass
 
@@ -33,27 +33,27 @@ class BinaryTree:
 
     def print(self, node=None):
         '''
-          print(node=optional: Node) -> None:\n
-          prints out all values recursively (in a depth first search fashion)
-          defualt start is at root node
+        print(node=optional: Node) -> None:\n
+        prints out all values recursively (in a depth first search fashion)
+        defualt start is at root node
         '''
         pass
 
     def size(self, node=None):
         '''
-			size(node=optional: Node) -> int:\n 
-			performs breadth first search
-			Calculate the number of nodes in the tree, starting from the given node
-			If no node is provided, we can use the root as a sensible default
+        size(node=optional: Node) -> int:\n 
+        performs breadth first search
+        Calculate the number of nodes in the tree, starting from the given node
+        If no node is provided, we can use the root as a sensible default
         '''
         pass
 
     def height(self, node=None):
         '''
-			height(node=optional: Node) -> int:\n 
-			perform breadth first search
-			Calculate the maximum amount of nodes in any one path from the given node
-			If not given a specific node, default to using the root node
+        height(node=optional: Node) -> int:\n 
+        perform breadth first search
+        Calculate the maximum amount of nodes in any one path from the given node
+        If not given a specific node, default to using the root node
         '''
         pass
 
@@ -67,8 +67,8 @@ class BinaryTree:
 
     def get_min(self):
         '''
-			getMin() -> int:\n 
-			perform depth first search
-			Calculate the minimum value held in the tree
+        getMin() -> int:\n 
+        perform depth first search
+        Calculate the minimum value held in the tree
         '''
         pass
