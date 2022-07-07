@@ -10,7 +10,6 @@ class Node:
     def __str__(self):
         return f'{self.data}'
 
-
 class BinaryTree:
     # When a new Tree is initialized, it has a null root property
     # This means the Tree begins as empty
