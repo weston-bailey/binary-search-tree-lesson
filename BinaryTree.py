@@ -1,6 +1,3 @@
-from locale import currency
-
-
 class Node:
   # here we will add the constructor
   def __init__(self, data):
@@ -11,7 +8,6 @@ class Node:
   # and the string method
   def __str__(self):
     return f'{self.data}'
-
 
 class BinaryTree:
   # the tree will start out empty, with a null head
