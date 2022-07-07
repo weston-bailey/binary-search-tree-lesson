@@ -23,11 +23,11 @@ class BinaryTree:
 
     def search(self, val):
         '''
-			search(value: any) -> value or bool:\n 
-			Performs depth first search
-			Search the Tree for a node with the given value
-			If the node exists, return it
-			If the node doesn't exist, return false
+        search(value: any) -> value or bool:\n 
+        Performs depth first search
+        Search the Tree for a node with the given value
+        If the node exists, return it
+        If the node doesn't exist, return false
         '''
         pass
 
@@ -59,9 +59,9 @@ class BinaryTree:
 
     def get_max(self):
         '''
-			getMax() -> int:\n 
-			perform depth first search
-			Calculate the maximum value held in the tree
+        getMax() -> int:\n 
+        perform depth first search
+        Calculate the maximum value held in the tree
         '''
         pass
 
