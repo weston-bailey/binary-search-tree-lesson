@@ -58,7 +58,49 @@ class BinaryTree:
             else:
                 return
 
-    def search(self, val):
+    def inorder_traversal(self):
+        order = []
+
+        def traverse(node):
+            nonlocal order
+            if not node:
+                return None
+            print(f'node data: {node.data}, order: {order}')
+            traverse(node.left)
+
+            order.append(node.data)
+
+            traverse(node.right)
+        
+        traverse(self.root)
+
+        return order
+    
+    def level_order(self):
+        if not self.root:
+            return []
+
+        queue = [self.root]
+        out = []
+
+        while len(queue):
+            level = []
+            level_len = len(queue)
+            for _ in range(level_len):
+                current_node = queue.pop()
+                level.append(current_node.data)
+
+                if current_node.left:
+                    queue.insert(0, current_node.left)
+                if current_node.right:
+                    queue.insert(0, current_node.right)
+
+
+            out.append(level)
+
+        return out
+    
+    def dfs(self, val):
         '''
         search(value: any) -> value or bool:\n 
         Performs depth first search
@@ -83,6 +125,28 @@ class BinaryTree:
                 return current_node
 
         return False  # Outside loop means we did not find it!
+
+    def bfs(self, val):
+
+        if self.root is None:
+            return False
+
+        queue = [self.root]
+
+
+        while len(queue) > 0:
+            cur_node = queue.pop(0)
+            
+            if cur_node.data == val:
+                return cur_node
+
+            if cur_node.left is not None:
+                queue.append(cur_node.left)
+
+            if cur_node.right is not None:
+                queue.append(cur_node.right)
+        
+        return False
 
     # print out all the nodes
     def print(self, node=None):
