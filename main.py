@@ -21,8 +21,9 @@ def main():
   print('Size should be 10:', test_tree.size())
   print('Max Val should be 10:', test_tree.get_max())
   print('Min Val should be -5:', test_tree.get_min())
-  # print(test_tree.level_order())
-  # print(test_tree.inorder_traversal())
+  print(test_tree.level_order())
+  print(test_tree.inorder_traversal())
+  print(test_tree.is_valid())
 
 if __name__ == "__main__":
   main()

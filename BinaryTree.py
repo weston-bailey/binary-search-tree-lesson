@@ -18,9 +18,9 @@ class BinaryTree:
 
     def insert(self, data):
         '''
-        Insert(data: any) -> None:\n 
-        creates a new Node from the data passed in and adds it to the tree
-        If the data is already in the tree, does not insert it again
+            Insert(data: any) -> None:\n 
+            creates a new Node from the data passed in and adds it to the tree
+            If the data is already in the tree, does not insert it again
         '''
 
         # create new node
@@ -57,56 +57,14 @@ class BinaryTree:
             # return if duplicate
             else:
                 return
-
-    def inorder_traversal(self):
-        order = []
-
-        def traverse(node):
-            nonlocal order
-            if not node:
-                return None
-            print(f'node data: {node.data}, order: {order}')
-            traverse(node.left)
-
-            order.append(node.data)
-
-            traverse(node.right)
-        
-        traverse(self.root)
-
-        return order
-    
-    def level_order(self):
-        if not self.root:
-            return []
-
-        queue = [self.root]
-        out = []
-
-        while len(queue):
-            level = []
-            level_len = len(queue)
-            for _ in range(level_len):
-                current_node = queue.pop()
-                level.append(current_node.data)
-
-                if current_node.left:
-                    queue.insert(0, current_node.left)
-                if current_node.right:
-                    queue.insert(0, current_node.right)
-
-
-            out.append(level)
-
-        return out
     
     def dfs(self, val):
         '''
-        search(value: any) -> value or bool:\n 
-        Performs depth first search
-        Search the Tree for a node with the given value
-        If the node exists, return it
-        If the node doesn't exist, return false
+            dfs(val: any) -> value or bool:\n 
+            Performs depth first search
+            Search the Tree for a node with the given value
+            If the node exists, return it
+            If the node doesn't exist, return false
         '''
 
         # case where there is not root yet
@@ -127,7 +85,13 @@ class BinaryTree:
         return False  # Outside loop means we did not find it!
 
     def bfs(self, val):
-
+        '''
+            bfs(val: any) -> value or bool:\n
+            Performs bredth first search
+            Search the Tree for a node with the given value
+            If the node exists, return it
+            If the node doesn't exist, return false
+        '''
         if self.root is None:
             return False
 
@@ -152,7 +116,7 @@ class BinaryTree:
     def print(self, node=None):
         '''
         print(node=optional: Node) -> None:\n
-        prints out all values recursively (in a breadth first search fashion)
+        prints out all values recursively (in a depth first search fashion)
         defualt start is at root node
         '''
 
@@ -167,13 +131,15 @@ class BinaryTree:
         if node.right:
             self.print(node.right)
 
+    # ## # ## # ## # ## #
+    # Challenges
+
     # breadth first search
     # Calculate the number of nodes in the tree, starting from the given node
     # If no node is provided, we can use the root as a sensible default
     def size(self, node=None):
         '''
         size(node=optional: Node) -> int:\n 
-        performs breadth first search
         Calculate the number of nodes in the tree, starting from the given node
         If no node is provided, we can use the root as a sensible default
         '''
@@ -197,7 +163,6 @@ class BinaryTree:
     def height(self, node=None):
         '''
         height(node=optional: Node) -> int:\n 
-        perform breadth first search
         Calculate the maximum amount of nodes in any one path from the given node
         If not given a specific node, default to using the root node
         '''
@@ -252,3 +217,55 @@ class BinaryTree:
             current_node = current_node.left
 
         return current_node.data
+
+    def inorder_traversal(self):
+        order = []
+
+        def traverse(node):
+            nonlocal order
+            if not node:
+                return None
+
+            traverse(node.left)
+
+            order.append(node.data)
+
+            traverse(node.right)
+        
+        traverse(self.root)
+
+        return order
+    
+    def level_order(self):
+        if not self.root:
+            return []
+
+        queue = [self.root]
+        out = []
+
+        while len(queue):
+            level = []
+            level_len = len(queue)
+            for _ in range(level_len):
+                current_node = queue.pop()
+                level.append(current_node.data)
+
+                if current_node.left:
+                    queue.insert(0, current_node.left)
+                if current_node.right:
+                    queue.insert(0, current_node.right)
+
+
+            out.append(level)
+
+        return out
+
+    def is_valid(self):
+        order = self.inorder_traversal()
+
+        for i in range(1, len(order)):
+            if order[i] <= order[i - 1]:
+                print(order[i], order[i - 1])
+                return False
+
+        return True
