@@ -95,7 +95,28 @@ class BinaryTree:
             If the node exists, return it
             If the node doesn't exist, return false
         '''
-        pass
+        
+        # case where there is not root
+        if not self.root:
+            return False
+
+        # queue to keep track of each level
+        queue = [self.root]
+
+        while len(queue) > 0:
+            # examine the node at the start of the queue (and remove it)
+            current_node = queue.pop(0) # get the item on front
+            # if it contains the data be we want -- we will return that node
+            if current_node.data == val:
+                return current_node
+            # take the children of the node we dequeued and enqueue them (only they are not none)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        
+        # out of the loop means we didnt find anything
+        return False 
 
     # print out all the nodes
     def print(self, node=None):
@@ -131,4 +152,5 @@ my_tree.insert(9)
 my_tree.insert(2)
 
 my_tree.print()
-# print(f'root\'s left: {my_tree.root.left}, root\'s right: {my_tree.root.right}')
+print('should be 9:', my_tree.dfs(9))
+print('should be 17:', my_tree.bfs(17))
