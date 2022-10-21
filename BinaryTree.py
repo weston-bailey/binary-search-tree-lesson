@@ -4,7 +4,7 @@ class Node:
         self.right = None
         self.data = data
 
-    # the representaion of the data as a string
+    # the representation of the data as a string
     def __str__(self):
         return f'{self.data}'
 
@@ -113,9 +113,9 @@ class BinaryTree:
     # print out all the nodes
     def print(self, node=None):
         '''
-        print(node=optional: Node) -> None:\n
-        prints out all values recursively (in a depth first search fashion)
-        defualt start is at root node
+            print() -> None:\n
+            prints out all values recursively (in a depth first search fashion)
+            default start is at root node
         '''
 
         if not node:
@@ -132,19 +132,11 @@ class BinaryTree:
     # ## # ## # ## # ## #
     # Challenges
 
-    # breadth first search
-    # Calculate the number of nodes in the tree, starting from the given node
-    # If no node is provided, we can use the root as a sensible default
-    def size(self, node=None):
+    def size(self):
         '''
-        size(node=optional: Node) -> int:\n 
-        Calculate the number of nodes in the tree, starting from the given node
-        If no node is provided, we can use the root as a sensible default
+            size() -> int:\n 
+            Calculate the number of nodes in the tree, starting from the root
         '''
-        # defualt to root
-        if not node:
-            node = self.root
-
         count = 0
 
         def recursive_size(node):
@@ -153,21 +145,16 @@ class BinaryTree:
                 count += 1
                 recursive_size(node.left)
                 recursive_size(node.right)
-        recursive_size(node)
+
+        recursive_size(self.root)
+
         return count
 
-    # Calculate the maximum amount of nodes in any one path from the given node
-    # If not given a specific node, default to using the root node
-    def height(self, node=None):
+    def height(self):
         '''
-        height(node=optional: Node) -> int:\n 
-        Calculate the maximum amount of nodes in any one path from the given node
-        If not given a specific node, default to using the root node
+            height() -> int:\n 
+            Calculate the maximum depth of nodes starting at the root
         '''
-
-        # defualt to root
-        if not node:
-            node = self.root
 
         max_height = 0
 
@@ -180,15 +167,15 @@ class BinaryTree:
                 recursive_height(node.left, height + 1)
                 recursive_height(node.right, height + 1)
 
-        recursive_height(node)
+        recursive_height(self.root)
         return max_height
 
     # Return the maximum data value stored in the tree
     def get_max(self):
         '''
-        getMax() -> int:\n 
-        perform depth first search
-        Calculate the maximum value held in the tree
+            get_max() -> int:\n 
+            perform depth first search
+            Calculate the maximum value held in the tree
         '''
 
         if not self.root:
@@ -202,9 +189,9 @@ class BinaryTree:
 
     def get_min(self):
         '''
-        getMin() -> int:\n 
-        perform depth first search
-        Calculate the minimum value held in the tree
+            get_min() -> int:\n 
+            perform depth first search
+            Calculate the minimum value held in the tree
         '''
 
         if not self.root:
@@ -217,6 +204,7 @@ class BinaryTree:
         return current_node.data
 
     def inorder_traversal(self):
+        # https://leetcode.com/problems/binary-tree-inorder-traversal/
         order = []
 
         def traverse(node):
@@ -235,6 +223,7 @@ class BinaryTree:
         return order
     
     def level_order(self):
+        # https://leetcode.com/problems/binary-tree-level-order-traversal/
         if not self.root:
             return []
 
@@ -259,6 +248,7 @@ class BinaryTree:
         return out
 
     def is_valid(self):
+        # https://leetcode.com/problems/validate-binary-search-tree/
         order = self.inorder_traversal()
 
         for i in range(1, len(order)):
