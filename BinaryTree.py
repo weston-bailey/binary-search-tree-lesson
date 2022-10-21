@@ -66,7 +66,26 @@ class BinaryTree:
             If the node exists, return it
             If the node doesn't exist, return false
         '''
-        pass
+        
+        # if there is no root return early
+        if not self.root:
+            return False
+
+        # loop through the tree iteratively
+        current_node = self.root
+        while current_node:
+            # the value we are searching for is smaller than current node
+            if val < current_node.data:
+                current_node = current_node.left
+            # the value is greater than current node
+            elif val > current_node.data:
+                current_node = current_node.right
+            # if the value neither -- its a match!
+            else:
+                return current_node
+        
+        # if we make it here, nothing was found
+        return False
 
     def bfs(self, val):
         '''
