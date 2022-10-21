@@ -65,18 +65,20 @@ class BinaryTree:
             If the node doesn't exist, return false
         '''
 
-        # case where there is not root yet
+        # case where there is no root yet
         if not self.root:
             return False
 
         # loop through tree starting at the root
         current_node = self.root
         while current_node:
-            # if the value is smaller than the
+            # if the value is smaller than the data, we move left
             if val < current_node.data:
                 current_node = current_node.left
+            # if the value is greater than the data, we move right
             elif val > current_node.data:
                 current_node = current_node.right
+            # if the value is neither, it is a match!
             else:
                 return current_node
 
@@ -90,24 +92,30 @@ class BinaryTree:
             If the node exists, return it
             If the node doesn't exist, return false
         '''
+
+        # case where there is not root yet
         if self.root is None:
             return False
 
+        # queue to keep track of each level
         queue = [self.root]
 
 
         while len(queue) > 0:
-            cur_node = queue.pop(0)
+            # examine the node at the start of the queue
+            current_node = queue.pop(0)
             
-            if cur_node.data == val:
-                return cur_node
+            # if it has the data we are looking for, remove it
+            if current_node.data == val:
+                return current_node
 
-            if cur_node.left is not None:
-                queue.append(cur_node.left)
-
-            if cur_node.right is not None:
-                queue.append(cur_node.right)
+            # otherwise, add its children to the queue if they exist
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
         
+        # if we make it out of the loop without returning, nothing was found
         return False
 
     # print out all the nodes
