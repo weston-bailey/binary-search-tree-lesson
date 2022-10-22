@@ -139,18 +139,53 @@ class BinaryTree:
         # print(node) # in order traversal
         if node.right:
             self.print(node.right)
+    
+    def height(self):
+        # if node == False:
+        #     node = self.root
+        # print(max_height)
+        # if node:
+            # if height > max_height:
+            #     max_height = height
+
+            #     self.height(height + 1, max_height, node.left)
+            #     self.height(height + 1, max_height, node.right)
+            #     return max_height
+        # return max_height
+
+        max_height = 0
+        def recurse_dfs(node, height=1):
+            nonlocal max_height
+            print(node, max_height)
+            if node:
+                if height > max_height:
+                    max_height = height
+
+                recurse_dfs(node.left, height + 1)
+                recurse_dfs(node.right, height + 1)
+        
+        recurse_dfs(self.root)
+
+        return max_height
+
+
 
 my_tree = BinaryTree()
 my_tree.insert(15)
-my_tree.insert(10)
+# my_tree.insert(10)
+# my_tree.insert(11)
+# my_tree.insert(4)
+
 my_tree.insert(16)
 my_tree.insert(19)
 my_tree.insert(22)
+my_tree.insert(24)
 my_tree.insert(17)
-my_tree.insert(6)
-my_tree.insert(9)
-my_tree.insert(2)
+# my_tree.insert(6)
+# my_tree.insert(9)
+# my_tree.insert(2)
 
-my_tree.print()
-print('should be 9:', my_tree.dfs(9))
-print('should be 17:', my_tree.bfs(17))
+# my_tree.print()
+print(my_tree.height())
+# print('should be 9:', my_tree.dfs(9))
+# print('should be 17:', my_tree.bfs(17))
