@@ -8,6 +8,7 @@ class Node:
     def __str__(self):
         return f'{self.data}'
 
+
 class BinaryTree:
     # When a new Tree is initialized, it has a null root property
     # This means the Tree begins as empty
@@ -55,7 +56,7 @@ class BinaryTree:
             # return if duplicate
             else:
                 return
-    
+
     def dfs(self, val):
         '''
             dfs(val: any) -> value or bool:\n 
@@ -100,11 +101,10 @@ class BinaryTree:
         # queue to keep track of each level
         queue = [self.root]
 
-
         while len(queue) > 0:
             # examine the node at the start of the queue
             current_node = queue.pop(0)
-            
+
             # if it has the data we are looking for, remove it
             if current_node.data == val:
                 return current_node
@@ -114,7 +114,7 @@ class BinaryTree:
                 queue.append(current_node.left)
             if current_node.right is not None:
                 queue.append(current_node.right)
-        
+
         # if we make it out of the loop without returning, nothing was found
         return False
 
@@ -225,11 +225,11 @@ class BinaryTree:
             order.append(node.data)
 
             traverse(node.right)
-        
+
         traverse(self.root)
 
         return order
-    
+
     def level_order(self):
         # https://leetcode.com/problems/binary-tree-level-order-traversal/
         if not self.root:
@@ -249,7 +249,6 @@ class BinaryTree:
                     queue.insert(0, current_node.left)
                 if current_node.right:
                     queue.insert(0, current_node.right)
-
 
             out.append(level)
 
