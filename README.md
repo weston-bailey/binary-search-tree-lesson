@@ -19,21 +19,21 @@ To get started head over to BinaryTree.py and check out the classes there. There
 ## Challenges: 
 
 ```python
-    def size(self):
+    def size():
         '''
             size() -> int:\n 
             Calculate the number of nodes in the tree, starting from the root
         '''
         pass
 
-    def height(self):
+    def height():
         '''
             height() -> int:\n 
             Calculate the maximum depth of nodes starting at the root
         '''
         pass
 
-    def get_max(self):
+    def get_max():
         '''
             get_max() -> int:\n 
             perform depth first search
@@ -41,7 +41,7 @@ To get started head over to BinaryTree.py and check out the classes there. There
         '''
         pass
 
-    def get_min(self):
+    def get_min():
         '''
             get_min() -> int:\n 
             perform depth first search

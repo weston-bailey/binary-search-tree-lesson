@@ -1,6 +1,7 @@
 class Node:
     pass
 
+
 class BinaryTree:
     def __init__(self):
         pass
@@ -12,7 +13,7 @@ class BinaryTree:
             If the data is already in the tree, does not insert it again
         '''
         pass
-    
+
     def dfs(self, val):
         '''
             dfs(val: any) -> value or bool:\n 
